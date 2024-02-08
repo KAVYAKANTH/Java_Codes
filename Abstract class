@@ -1,0 +1,38 @@
+package Practiceprograms;
+
+/* Abstract class name should be write as abstract
+ * main methos also contain abstract method
+ * it contains concerte class and interface class for the we can provide the the implementation
+ * Declaring the method name should be abstract
+ */
+public class Abstractclass {
+	public static void main(String[] args) {
+		B b = new B();
+		b.interfacemethod();
+		b.concrete();
+		b.add();
+	}
+
+}
+abstract class A
+{
+	public void concrete() 
+	{
+		System.out.println("Abstract method accessing");
+	}
+	public abstract void interfacemethod();
+	public void add()
+	{
+		int x =10;
+		int y = 20;
+		int z = x + y;
+		System.out.println(z);
+	}
+}
+class B extends A
+{
+	public void interfacemethod()
+	{
+		System.out.println("Printing extending method");
+	}
+}
