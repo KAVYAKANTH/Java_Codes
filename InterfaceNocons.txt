@@ -1,0 +1,53 @@
+class InterfaceNocons
+{
+	public static void main(String[] args)
+	{
+		B b = new B();
+		b.m1();
+		b.m2();
+		b.m3();
+	}
+}
+abstract class A
+{	
+	int x;
+	public void m1()
+	{	
+		x=10;
+		System.out.println("x");
+	}
+	public abstract void m2();
+	public  abstract void m3();
+	D()
+	{	
+		System.out.println("Constructor in abstract class");
+	}
+}
+class B extends A
+{
+	public void m2()
+	{	
+		
+		System.out.println("Extending in child class M2");
+	}
+	public void m3()
+	{	
+		
+		System.out.println("Extending in child class M3");
+	}
+	D()
+	{
+		super();
+	}
+	
+	
+}
+Interface I 
+{
+}
+Interface I2 extends I
+{
+}
+class C
+{
+}

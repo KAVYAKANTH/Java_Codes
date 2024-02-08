@@ -1,0 +1,18 @@
+public void action()
+{
+        reentrantlock.lock();
+        try
+        {
+            System.out.println("Lock has acquired"+Thread.currentThread().getName());
+					Thread.sleep(2000);
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            reentrantlock.unlock();
+        }
+         
+}

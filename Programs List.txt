@@ -1,0 +1,1963 @@
+1. Overload Program
+class Overload
+{
+	public static void main(String[] args)
+	{
+		A a = new A();
+		a.m1(10,20);
+		a.m1("Kavya");
+		a.m1(30,9492);
+
+
+	}
+}
+class A
+{
+	public void m1(int x , int y)
+	{
+		//int x=10, y=20;
+		//System.out.println("Overload m1");
+		System.out.println(x+y);
+	}
+	public void m1(String s)
+	{
+		//String s="Kavya";
+		System.out.println(s);
+	}
+	public void m1(int x, long l)
+	{
+		//int x=30, l=9492;
+		//System.out.println("Overload m1");
+		System.out.println(x + l);
+	}
+}
+/*class B
+{
+	public void m1();
+	{
+		System.out.println("Overload m1");
+	}
+	public void m2();
+	{
+		System.out.println("Overload m1");
+	}
+	public void m2();
+	{
+		System.out.println("Overload m1");
+	}
+}*/
+
+2.Program
+
+class Program2
+{
+
+	int i=10;	
+	public static void main( String[] args)
+	{
+		System.out.println("Hello first java example");
+		Program2 p=new Program2();
+		System.out.println(p.i)
+	}
+}
+Program 3 - Constrct
+
+class Constrct
+{
+	public static void main(String[] args)
+	{
+		B b = new B(10,"Hello");
+		b.m1();
+		
+	}
+}
+class A
+{
+	A()
+	{
+		System.out.println("P: Default constructor");
+	}
+	A(int x, String y)
+	{	
+		System.out.println("p:Parameterzied constructor");
+	}
+	{	
+		System.out.println("Instance object call");
+	}
+	static 
+	{
+		System.out.println("Static block");
+	}
+}
+class B extends A
+{
+	B()
+	{
+		super(10,"bantu");
+		System.out.println("C: default constructor");
+	}
+	B(int x, String y)
+	{
+		this();
+		System.out.println("c:Parameterzied constructor");
+	}
+	public void m1()
+	{
+		System.out.println("calling m1 object");
+	}
+}
+
+Program 4 - constructor
+
+class Constructor
+{
+	public static void main(String[] args)
+	{
+		B b = new B();
+		b.m1();
+		
+	}
+}
+class A
+{
+	A()
+	{
+		//no arguments also access and prints via super keyword
+		System.out.println("Parent: Default constructor");
+	}
+	A(int x)
+	{
+		System.out.println("Parent: Parameter constructor");
+	}
+	{	
+		//no methods	
+		System.out.println(" Parent: Prints without no parameters in class A");
+	}
+	static
+	{	
+		//prints after the instance object is done	
+		System.out.println("Parent: Prints statements in class bec of static");
+	}
+}
+class B extends A
+{
+	B()
+	{	
+		super(10);
+		//no arguments also access and prints via super keyword
+		System.out.println("child: Default constructor");
+	}
+	B(int x)
+	{
+		super();
+		System.out.println("child: Parameter constructor");
+	}
+	{	
+		//no methods	
+		System.out.println(" child: Prints without no parameters in class A");
+	}
+	public void m1()
+	{	
+		//prints after the instance object is done	
+		System.out.println("child: Prints starements in class bec of object created");
+	}
+}
+
+Program 5  DynamicBinding
+
+class DynamicBinding
+{
+	public static void main(String args[])
+	{
+		Overidding o = new Overidding();
+		o.m1(10);
+		o.m2("Hello World");
+		Over b = new Over();
+		b.m3();
+		b.m2();
+		
+
+	}
+}
+class Overidding
+{
+	public void m1(int x)
+	{
+		System.out.println(x);
+	}
+	public void m2(String s)
+	{
+		System.out.println(s);
+	}
+}
+class Over
+{
+	public void m3()
+	{
+		System.out.println("Method Overidding program");
+	}
+	public void m2()
+	{
+		System.out.println("Method Overidding at run time");
+	}
+
+}
+
+program - 6 exception
+class Exception
+{
+	public static void main(String[] args)
+	{
+		System.out.println(50 + 10);
+		System.out.println(50-10);
+		System.out.println(50*0);
+		System.out.println(50/10);
+		System.out.println(50/0);//Runtime exception
+		System.out.println(50+10);
+		System.out.println(50+70);
+	}
+		
+
+}
+
+
+program 7  Inheritance
+class Inheritance
+{
+	public static void main (String [] args)
+	{
+		A a = new A();
+		a.B();
+		a.C();
+		B b = new B();
+		b.E();
+		b.F();
+		b.B();
+		b.C();
+		A v = new B();
+		v.B();
+		v.C();
+	}
+	
+}
+class A
+{
+	public void B()
+	{
+	
+		System.out.println("Parent class 1 here");
+	}
+	public void C()
+
+	{
+		System.out.println("Parent class 2 here");
+	}
+
+}
+class B extends A
+{
+	public void E()
+	{
+		System.out.println("Child class 1 here");
+	}
+	public void F()
+	{
+		System.out.println("Child class 2 here");
+	}
+	public void C()
+	{
+		System.out.println("Chid class accessing parent inheritance");
+	}
+}
+
+program 8 - InterfaceNocons
+
+class InterfaceNocons
+{
+	public static void main(String[] args)
+	{
+		B b = new B();
+		b.m1();
+		b.m2();
+		b.m3();
+	}
+}
+abstract class A
+{	
+	int x;
+	public void m1()
+	{	
+		x=10;
+		System.out.println("x");
+	}
+	public abstract void m2();
+	public  abstract void m3();
+	D()
+	{	
+		System.out.println("Constructor in abstract class");
+	}
+}
+class B extends A
+{
+	public void m2()
+	{	
+		
+		System.out.println("Extending in child class M2");
+	}
+	public void m3()
+	{	
+		
+		System.out.println("Extending in child class M3");
+	}
+	D()
+	{
+		super();
+	}
+	
+	
+}
+Interface I 
+{
+}
+Interface I2 extends I
+{
+}
+class C
+{
+}
+
+Program 9 Methodhiding
+// if both static method is defined in child and parent class, child class will hide the data and parent method will takes the ouput to print.
+
+class Methodhiding
+{
+	public static void main(String[] args)
+	{
+		B b = new B();
+		b.m4();
+		b.m2();
+		b.m5();
+		b.m1();
+		b.m3();
+		A a = new B();
+		a.m1();
+		a.m2();
+		a.m3();
+	}
+}
+class A
+{
+	public void m1()
+	{
+		System.out.println("Hello world");
+	}
+	public static void m2()
+	{
+		System.out.println("Method showing of parent A");
+	}
+	public void m3()
+	{
+		System.out.println("Welcome java class");
+	}
+}
+class B extends A
+{
+	public void m4()
+	{
+		System.out.println("In Child class");
+	}
+	public static void m2()
+	{
+		System.out.println("Method hiding because of child class");
+	}
+	public void m5()
+	{
+		System.out.println("Progrm of method hiding");
+	}
+}
+
+program 10 Methoverloading
+
+class Methoverloading
+{
+	public static void main(String args[])
+	{
+		Overloads o = new Overloads();
+		Run r = new Run();
+		Overloads d = new Run();
+		
+		
+	}
+	public void m1()
+	{
+		o.over();
+		o.over(500, false);
+		o.m1();
+		System.out.println("Run time object detecting");
+		r.m1();
+		d.m1();
+		d.over();
+			
+	}
+	static
+	{
+		System.out.println("Main method overloading the dyanamic binding");
+	}
+	
+
+}
+class Overloads
+{
+	public void over()
+	{
+		System.out.println("Method overload with no parameter");
+	}
+	public void over(int x, Boolean b)
+	{
+		
+		System.out.println("Method overloads with add values");
+	}
+		public void m1()
+	{
+		System.out.println("Runs on m1");
+	}
+}
+
+class Run extends Overloads
+{
+
+	public void m1()
+	{
+		System.out.println("Runs on m1");
+	}
+	static
+	{
+	
+		System.out.println("Method overloads with long numbers");
+	}
+
+}
+Program 11 Add
+
+class Add
+{
+	public static void main(String args[])
+	{
+		Mulsum m = new Mulsum();
+		m.num(10,20);
+		m.num(30,20);
+		m.num(40,20);
+		
+	}
+
+}
+class Mulsum
+{
+	public void num(int x, int y)
+	{
+		System.out.println(x+y);
+		System.out.println(x-y);
+		System.out.println(x*y);
+	}
+
+}
+
+program 12  Objectcall
+class Objectcall
+{
+	public static void main(String args[])
+	{
+		System.out.println("The main object call extract");
+		A a = new A();
+		B b = new B();
+		C c = new C();
+		a.m1(c);
+		b.m2();
+	}
+}
+class A
+{
+	public void m1(C c)
+	{
+		System.out.println("Object call on parent class A");
+		c.m3();
+	}
+}
+class B
+{
+	public void m2()
+	{
+		System.out.println("Object call on parent class B");
+	}
+}
+class C extends B
+{
+	public void m3()
+	{
+		System.out.println("object call on child class c");
+		System.out.println("Extracting the data with an object from class A");
+	}
+}
+
+program 13 Overriding
+class Overriding
+{	
+	public static void main(String [] args)
+	{
+		Parent p = new Parent();
+		p.m1();
+		p.m2();
+		p.m3();
+		Child c = new Child();
+		c.m1();
+		c.m2();
+		c.m3();
+		c.m4();
+		Parent e = new Child();
+		e.m3();
+	}
+}
+class Parent
+{
+	public void m1()
+	{
+		System.out.println("I am Parent 1 class");
+	}
+	public void m2()
+	{
+		System.out.println("I am parent 2 class");
+	}
+	public void m3()
+	{
+		System.out.print("I am parent 3 class");
+
+	}	
+}
+class Child extends Parent
+{
+	public void m3()
+	{
+		System.out.println("Method overriding");
+
+	}
+	public void m4()
+	{
+		System.out.print("I am chid 2 class");
+
+	}
+}
+
+program 14 - Sum
+
+class SuMdiv
+{
+	public static void main(String args[])
+	{
+		Operation p = new Operation();
+		int Sum = p.Sum(50,50);
+		int Div = p.Div(Sum);
+		int Sub = p.Sub(Div);
+		int Mul = p.Mul(Sub);
+		System.out.println("Printing the value of Sum");
+		System.out.println(Sum);
+		System.out.println("Printing the value of Div");
+		System.out.println(Div);
+		System.out.println("Printing the value of Sub");
+		System.out.println(Sub);
+		System.out.println("Printing the value of Mul");
+		System.out.println(Mul);
+
+
+		
+	}
+}
+class Operation
+{
+	public int Sum(int x ,int y)
+	{
+		int sum = x + y;
+		return sum;
+	}
+	public int Div(int z)
+	{
+		int div = z/2;
+		return div;
+	}
+	public int Sub(int p)
+	{
+		int sub = p - 10;
+		return sub;
+	}
+	public int Mul(int q)
+	{
+		int mul = q * 2;
+		return mul;
+	}
+
+}
+program 15 - Abstract
+class Abstract
+{
+	public stactic void main(String[] args)
+	{
+		B b = new B();
+		b.m1();
+		b.m2();
+		b.m3();
+		b.m4();
+	}
+}
+abstract class A
+{
+	public void m1()
+	{
+		System.out.println("Abstract in concrete m1");
+	}
+	public abstract void m2();
+	public abstract void m3();
+	public void m4()
+	{
+		System.out.println("Abstract in concrete m4");
+	}
+}
+class B extends class A 
+{
+	public void m2()
+	{
+		System.out.println("concrete extends m4");
+	}
+	public void m3()
+	{
+		System.out.println("concrete extends m3");
+	}	
+}
+
+program 16 - AbstractInterface
+class AbstractInterface
+{
+	public static void main(String[] args)
+	{
+		C b = new C();
+		b.m1();
+		b.m2();
+		b.m3();
+		b.m4();
+		D d = new D();
+		d.m5();
+		d.m6();
+		d.m7();
+	}
+}
+abstract class A
+{
+	public void m1()
+	{
+		System.out.println("Printing abstract class m1");
+	}
+	public void m2()
+	{
+		System.out.println("Printing abstract class m2");
+	}
+	public abstract void m3();
+	public abstract void m4();
+}
+
+class C extends A
+{
+	public void m3()
+	{
+		System.out.println("Printing abstract class m3");
+	}
+	public void m4()
+	{
+		System.out.println("Printing abstract class m4");
+	}
+	
+		
+}
+
+interface I 
+{	
+	void m5();
+	public void m6();
+	
+}
+interface I2 extends I
+{	
+	void m7();
+}
+class D implements I2
+{
+	public void m5()
+	{
+		System.out.println("Printing abstract class m5");
+	}
+	public void m6()
+	{
+		System.out.println("Printing abstract class m6");
+	}
+	public void m7()
+	{
+		System.out.println("Printing abstract class m7");
+	}
+	
+}
+program 17 BooleanEqualsTo
+class BooleanEqualsTo
+{
+	public static void main(String[] args)
+	{
+		Emp s1 = new Emp(10, "Anjali");
+		Emp s2 = new Emp(20, "anjali");
+		
+		System.out.println(s1==s2); // refernce comparision
+		System.out.println(s1.equals(s2)); // need to overide content comparision
+		
+		
+	} 
+}
+class Emp
+{
+	public final int empId;
+	public final String empName;
+	
+	Emp(int empId,String empName)
+	{
+		this.empId = empId;
+		this.empName = empName;
+	}
+}
+
+program 18 BooleanEqualsToOveride
+class BooleanEqualsToOveride
+{
+	public static void main(String[] args)
+	{
+		Emp s1 = new Emp(10, "Anjali");
+		Emp s2 = s1;
+		Emp s3 = new Emp(20, "Kavya");
+		
+		System.out.println(s1==s2); // refernce comparision
+		System.out.println(s1.equals(s2)); // need to overide content comparision
+		System.out.println(s2==s3); // refernce comparision
+		System.out.println(s2.equals(s3)); // need to overide content comparision
+		System.out.println(s1==s3); // refernce comparision
+		System.out.println(s1.equals(s3)); // need to overide content comparision
+		
+		
+	} 
+}
+class Emp
+{
+	public final int empId;
+	public final String empName;
+	
+	Emp(int empId,String empName)
+	{
+		this.empId = empId;
+		this.empName = empName;
+	}
+}
+public boolean equals(Object o)// overiding equals object
+{
+	if(o==null)
+	return false;
+	Emp s2=(Emp)o; //typecasting emp 
+	return empId==s2.empId && EmpName.equals(s2.Empname);
+}
+
+program 19
+//clone concept
+class CloneObject
+{
+	public static void main(String[] args)throws CloneNotSupportedException
+	{
+		shallow s = new shallow();
+		s.setEmpid(20);
+		s.setEmpname("Anjali");
+		System.out.println("EmpID1 = "+s.empid+ "EmpName1 = "+s.empname);
+		shallow s1=(shallow)s.clone();
+		s1.setEmpid(s1.getEmpid());
+		s1.setEmpname(s1.getEmpname());
+		System.out.println("EmpID2 = "+s1.empid+ "EmpName2 = "+s1.empname);
+	}
+		
+		
+}
+class shallow implements Cloneable
+{
+	int empid;
+	String empname;
+  	public void setEmpid(int empid)
+	{
+		this.empid=empid;
+		
+	}
+	public void setEmpname(String empname)
+	{
+		this.empname=empname;
+		
+	}
+	public int getEmpid()
+	{
+		return empid;
+		
+	}
+	public String getEmpname()
+	{
+		return empname;
+		
+	}
+	public Object clone()throws CloneNotSupportedException
+	{
+		return super.clone();
+	}
+}
+
+program 20 CodereduceVariable
+class CodereduceVariable
+{
+	public static void main(String[] args)
+	{
+		//R a = new A(10, 20, 30, false);
+		B b = new B(40,50,60,900.88,00011122);
+		C c = new C(70,80,90,true,990909);
+		//a.print();
+		b.print();
+		c.print();
+	
+	}
+}
+class Parent
+{
+	int x;
+	int y;
+	int z;
+	Parent(int x, int y, int z)
+	{
+		this.x = x;
+		this.y = y;
+		this.z = z;
+	}
+class R extends Parent
+{
+	//String s;
+	boolean b;
+	R(int x, int y, int z, boolean b)
+	{
+		super(x,y,z);
+		//this.s = s;
+		this.b = b;
+	}
+	public void print()
+		{
+			System.out.println("x = "+x+" y = "+y+" z = "+z+" b = "+b);
+		}
+	}
+}
+class B extends Parent
+{
+	double d;
+	long l;
+	B(int x, int y, int z,double d,long l)
+	{
+		super(x,y,z);
+		this.d = d;
+		this.l = l;
+	}
+	public void print()
+		{
+			System.out.println("x = "+x+" y = "+y+" z = "+z+"d = "+d+"l = "+l);
+
+		}
+	
+}
+class C extends Parent
+{
+	boolean t;
+	long p;
+	C(int x, int y, int z, boolean t,long p)
+	{
+		super(x,y,z);
+		this.t = true;
+		this.p = p;
+	}
+	
+	public void print()
+		{
+			System.out.println("x = "+x+" y = "+y+" z = "+z+" t = "+t+"p = "+p);
+		}
+	
+}
+
+program 21 CustomException
+// can create our own exception using custom exception using constructor.
+class CustomException
+{
+	public static void main(String[] args)throws InvalidNoException
+	{
+		ValidCode v = new ValidCode();
+		v.checkstus(122);
+		v = null;
+		System.gc();
+	}
+}
+class InvalidNoException extends Throwable
+{
+	InvalidNoException(String msg)
+	{
+		super(msg);
+	}
+}
+class ValidCode
+{
+   	public void checkstus(int num)throws InvalidNoException
+	{
+		
+		if( num == 123)
+		{
+			System.out.println("waiting");
+		}
+		else if( num == 456)
+		{
+			System.out.println("Confirmed");
+		}
+		else if( num == 789)
+		{
+			System.out.println("RAC");
+		}
+		else
+		{
+			InvalidNoException i = new InvalidNoException("Invalid PNR no");
+			throw i; // used for custom exception
+
+			//System.out.println("Invali no");
+		}
+	}
+	
+}
+
+program 22 Deepclone  
+class Deepclone   // create a new object reffernce and it will not copy as original
+{
+	public static void main(String[] args)
+	{
+		shallow s = new shallow();
+		s.setEmpid(20);
+		s.setEmpname("Anjali");
+		System.out.println("EmpID1 = "+s.empid+ "EmpName1 = "+s.empname);
+		shallow s1 = new shallow();
+		s1.setEmpid(s1.getEmpid());
+		s1.setEmpname(s1.getEmpname());
+		System.out.println("EmpID2 = "+s1.empid+ "EmpName2 = "+s1.empname);
+	}
+		
+		
+}
+class shallow
+{
+	int empid;
+	String empname;
+  	public void setEmpid(int empid)
+	{
+		this.empid=empid;
+		
+	}
+	public void setEmpname(String empname)
+	{
+		this.empname=empname;
+		
+	}
+	public int getEmpid()
+	{
+		return empid;
+		
+	}
+	public String getEmpname()
+	{
+		return empname;
+		
+	}
+	public String toString()
+	{
+		return "Empid =" +empid+ "Empname = "+empname;
+	}
+}
+
+program 22 Exception
+class Exception
+{
+	public static void main(String args[])
+	{
+		A a = new A();
+		a.m1();
+		a.m2();
+		a.m3();
+		a.m4();
+	}
+}
+class A
+{
+	public void m1()
+	{
+		System.out.println(10/2);
+		System.out.println(" Execution on m1");
+		
+	}
+	public void m2()
+	{
+		System.out.println(20/3);
+		System.out.println(" Execution on m2");
+		
+	}
+	public void m3()
+	{
+		try
+		{
+			System.out.println(10/0); // Arithmatic expeception at run time
+			System.out.println(" Execution on m3");
+		}
+		catch(ArithmeticException e)
+		{
+				System.out.println(10/2);
+				System.out.println("caught the exception execution");
+				
+		}
+		
+	}
+	public void m4()
+	{
+		System.out.println(30/5);
+		System.out.println(" Execution on m4");
+	}
+}
+
+Program 23 - Expcetionstep
+import java.io.*;
+class Expcetionstep
+{
+	public static void main(String[] args) throws IOException
+	{
+		Test t = new Test();
+		t.m1();
+		//t.printStackTrace();
+	}
+}
+class Test
+{
+	public void m1() throws IOException
+	{
+		m2();
+	}
+	public void m2() throws IOException
+	{
+		m3();
+	}
+	public void m3() throws IOException
+	{
+		m4();
+	}
+	public void m4() throws IOException
+	{
+		BufferedReader br = new BufferedReader( new FileReader(new File("C:\\learnings\\Java\\test.txt")));
+		System.out.println(br.readLine());
+	}
+}
+
+program 24 Filereader
+import java.io.*;
+class Filereader
+{	
+	public static void main(String[] args)
+	{
+		
+		Test t = new Test();
+		t.m1();
+	}
+}
+class Test
+{
+	public void m1()
+	{
+		try
+		{
+	
+			File f = new File("C:\\learnings\\Java\\test.txt");
+			FileReader fr = new FileReader(f);
+			BufferedReader br = new BufferedReader(fr);
+			System.out.println(br.readLine());
+		}
+		catch(FileNotFoundException e)
+		{
+			System.out.println("File not found expection");
+		}
+		catch(IOException e)
+		{
+			System.out.println("Hello I'm kavyanjali N here");
+		}
+		
+	}
+}
+
+program 25 Filereaderprgs
+import java.io.*;
+
+class Filereaderprg
+{
+	public static void main(String[] args)
+	{
+		File t = new File();
+		t.m1();
+		
+	}
+}
+class File
+{
+	public void m1()
+	{	
+		File = f;
+		FileReader = fr;
+		BufferedReader = br;
+		try
+		{
+			
+			new File("C:\\learnings\\Java\\Interface.txt");
+			new FileReader(f);
+			 new BufferedReader(fr);
+			System.out.println(br.readLine());
+		}
+		catch(FileNotFoundException e)
+		{
+			System.out.println("FileNotFound");
+		}
+		catch(IOException e)
+		{
+			System.out.println("inputoutput exception");
+		}
+		finally
+		{
+			fr.close();
+			br.close();
+		}
+	}
+}
+
+program 26 Finalclass
+final class Finalclass
+{
+	public static final void main(String[] args)
+	{
+	
+		
+		float f = 22.1f;
+		int i =20;
+		B a = new B();
+		//a.m1();
+		a.m2();
+	}
+
+}
+
+final class A
+{
+	public final void m1()
+	{
+		int i =20;
+		System.out.println(i * 10);
+		//m2();
+	}
+}
+final class B
+{
+	public final void m2()
+	{
+		final int x = 10;
+		int z = 5;
+		int i =20;
+		System.out.println(x + i);
+		System.out.println(x - z);
+	}
+	
+}
+
+program 27 Finally
+class Finally
+{
+	public static void main(String[] args)
+	{
+		A a = new A();
+		a.m1();
+		a = null;
+		System.out.println("Assign null to object refernce");
+		System.gc();
+	}
+	
+}
+class A
+{
+	public void m1()
+	{
+		System.out.println("Hello Java");
+	}
+	public void finalize()
+	{
+	//to perform clean-up activity on deamon thread(Garbage collector, JVM will mark and sleep the null storage.
+
+		System.out.println("Cleaning in fianlly block");
+
+	}
+}
+
+program 28 Finallyprg
+
+import java.io.*;
+class Finallyprg
+{
+	public static void main(String[] args)
+	{
+		try
+		{	
+
+		File f = new File("C:\\learnings\\Java\\test.txtt");
+		FileReader fr = new FileReader(f);	
+		BufferedReader br = new BufferedReader(fr);
+		System.out.println(br.readLine());
+		}
+		catch(IOException e)
+		{
+			System.out.print("Hello catch block \n");
+		}
+		finally
+		{
+			System.out.print("Performing cleaning activity");
+			
+			//fr.close();
+			//br.close();
+		}
+		
+
+	}
+	
+} 
+
+program 29 Getclass
+
+class Getclass
+{
+	public static void main(String[] args)
+	{
+		A a = new A();
+		System.out.println(a.hashCode());
+		Class c = a.getClass();
+		System.out.println(c);
+		Child b = new Child();
+		b.m1();
+		b.m2();
+		b.m3();
+		System.out.println(b.hashCode());
+		Class c1 = b.getClass();
+		System.out.println(c1);
+		Overload o = new Overload();
+		o.m4();
+		o.m4(10,2);
+		//o.m4(50,100);
+		Class c2 = o.getClass();
+		System.out.println(c2);
+	}
+	
+}
+class A
+{
+	A()
+	{
+		System.out.println("Default constructor");
+	}
+	{
+		System.out.println("Instance object");
+	}
+}
+class Bparent
+{
+	public void m1()
+	{
+		System.out.println("Getting m1 in Bparent class");
+	}
+	public void m2()
+	{
+		System.out.println("Getting  m2 in Bparent class");
+	}
+}
+class Child extends Bparent
+{
+	public void m1()
+	{
+		System.out.println("Getting m1 in Child  class");
+	}
+	public void m3()
+	{
+		System.out.println("Getting  m3 in Child class");
+	}
+}
+class Overload
+{
+	public void m4()
+	{
+		System.out.println("Overloading in M1");
+	}
+	public void m4(int x ,int p)
+	{
+		System.out.println("Overloading in M1 and printing m1");
+		System.out.println( x + p);
+	}
+}
+
+program 30 GetclassSimple
+class GetclassSimple
+{
+	public static void main(String[] args)
+	{
+		A a = new A();
+		a.m1();
+		Class c = a.getClass();
+		System.out.println(c);
+	}
+}
+class A
+{
+	public void m1()
+	{
+		System.out.println("Hello");
+	}
+}
+
+program 31 Hashcode
+
+class Hashcode
+{
+	public static void main(String[] args)
+	{
+	
+		A a = new A(); // to check unique id of the ogbject
+		A a1 = new A();
+		A a2 = new A();
+		a.m1();
+		a.m2();
+		a.m3();
+		System.out.println(a.hashCode());
+		System.out.println(a1.hashCode());
+		System.out.println(a2.hashCode());
+	}
+}
+class A
+{
+	public void m1()
+	{
+		System.out.println("Hashcode object class printing m1");
+	}
+	public void m2()
+	{
+		System.out.println("Hashcode object class printing m2");
+	}
+	public void m3()
+	{
+		System.out.println("Hashcode object class printing m3");
+	}
+	public void m4()
+	{
+		System.out.println("Hashcode object class printing m4");
+	}
+}
+
+program 32 HashcodeusingConstructor
+
+//error is there
+
+class  HashcodeusingConstructor
+{
+	public static void main(String[] args)
+	{
+		B b = new B(false);
+		B b1 = new B();
+		B b1 = new B(9,"kavya");
+		B b1 = new B(5, 88.22);
+		
+		System.out.println(b.hashCode());
+		System.out.println(b1.hashCode());
+		
+	}
+		
+}
+class A
+{
+	A()
+	{
+		System.out.println("Hello default constructor");
+	}
+	A(int a , String s)
+	{
+		//int x = 10;
+		System.out.println( x * 2);
+		//String s = "Kavyanjali";
+		System.out.println(s);
+		
+	}
+}
+class B extends A
+{
+	B(boolean b)
+	{
+		System.out.println(b);
+	}
+	B(int y , double d)
+	{
+		//int y = 20;
+		//double d = 34445.009;
+		System.out.println(y * 10 -4);
+		System.out.println(d);
+		
+	}
+}
+
+program 33 ImmutableToMutable
+/* 
+1. To make Mutable string to Immutable String
+2. class should be declared as final
+3. Methos should declared as private and final keyword.
+4. Should not use getter method
+5. Should use Constructor method
+6. Main[Logic] = Deep copy(Make use of existing object refernce the copy the existing data and pass to new object)
+*/
+
+
+
+class ImmutableToMutable
+{
+	public static void main(String[] args)
+	{
+
+		B b1 = new B();
+		A a = new A(400,b1);
+		System.out.println("Before changing mutable");
+		System.out.println("In class " +a);
+		System.out.println("In class " +b1);
+		System.out.println("After changing Immutable");
+		b1.setY(30);
+		System.out.println("In class " +a);
+		System.out.println("In class " +b1);
+	}	
+}
+final class A
+{
+	private final int x;
+	private final B b1;
+	A(int x , B b1)
+	{
+		this.x=x;
+		B b2 = new B();
+		this.b1=b2;
+	}
+	public int getX()
+	{
+		return x;
+	}
+	public String toString()
+	{
+		return "x = "+x+"  "+b1;
+	}
+}
+class B
+{
+	int y =20;
+	public void setY(int y)
+	{
+		this.y=y;
+	}
+	public int getY()
+	{
+		return y;
+	}
+	public String toString()
+	{
+		return "y = "+y;
+	}
+}
+
+program 34 ImplementInterface
+class ImplementInterface
+{
+	public static void main(String[] args)
+	{
+		B b = new B();
+		b.m1();
+		b.m2();
+		b.m3();
+		b.m4();
+		b.m5();
+		b.m6();
+	}	
+}
+interface I
+{
+	public abstract void m1();
+	public abstract void m2();
+	public abstract void m3();
+}
+interface I2 extends I
+{
+	void m4();
+	void m5();
+	void m6();
+}
+class B implements I2
+{
+	public void m1()
+	{
+		System.out.println("Implementing m1");
+	}
+	public void m2()
+	{
+		System.out.println("Implementing m2");
+	}
+	public void m3()
+	{
+		System.out.println("Implementing m3");
+	}
+	public void m4()
+	{
+		System.out.println("Implementing m4");
+	}
+	public void m5()
+	{	
+		System.out.println("Implementing m5");
+	}
+	public void m6()
+	{	
+		System.out.println("Implementing m6");
+	}
+}
+
+program 35  InterfaceNocons
+// writing a program of abstract and interface method(using final keyword)
+class InterfaceNocons
+{
+	public static void main(String[] args)
+	{
+		B b = new B();
+		b.m1(10);
+		b.m2();
+		b.m3();
+		b.m4();
+		R r = new R();
+		r.c1();
+		r.c2();
+		r.c3();
+		
+		
+	}
+}
+abstract class A
+{	
+	int x; // Instance object intilization
+	public void m1( int x)
+	{	
+		System.out.println("Creating Instance variable & Printing value");
+		System.out.println(x);
+	}
+	public abstract void m2();
+	protected abstract void m3();
+	abstract void m4(); //incresing the scope
+	
+}
+class B extends A
+{
+	public void m2()
+	{	
+		
+		System.out.println("Extending in child class M2");
+	}
+	public void m3()
+	{	
+		
+		System.out.println("Extending in child class M3");
+	}
+	public void m4()
+	{	
+		
+		System.out.println("Extending in child class M4");
+	}
+	
+}
+interface I 
+{
+	final int x = 10;
+	public void c1();
+	public void c2();
+}
+interface I2 extends I
+{
+	public void c3();
+}
+class R implements I2
+{
+	
+	public void c1()
+	{
+		System.out.println("Interface printing the static value");
+		System.out.println(x);
+	}
+	public void c2()
+	{
+		System.out.println("Interface calling c2");
+	}	
+	public void c3()
+	{
+		System.out.println("Interface calling c3");
+	}
+	
+}
+
+program 36 MultipleInterface
+class MultipleInterface
+{
+	public static void main(String[] args)
+	{
+		Multiple m = new Multiple();
+		m.m1();
+		m.m2();
+		m.m3();
+	}
+}
+interface I
+{
+	public void m1();
+	public void m2();
+	public void m3();
+}
+interface I2 
+{
+	public void m3();
+	//function interface.
+}
+interface I3 extends I2 
+{
+	//marker interface with no method declaration.
+}
+class Multiple implements I,I3
+{
+	public void m1()
+	{
+		System.out.println("Interface in M1");
+	}
+	public void m2()
+	{
+		System.out.println("Interface in M1");
+	}
+	public void m3()
+	{
+		System.out.println("Interface in M3 overides and print the result");
+	}
+}
+
+program 37 ObjectToString
+
+import java.lang.reflect.*;
+import java.io.*;
+class ObjectToString
+{
+	public static void main(String[] args)
+	{
+		int count=1;
+		Object o = new Object();
+		Class c = o.getClass();
+		System.out.println(o.hashCode());
+		System.out.println(c.getName());
+		System.out.println(c.getSuperclass());
+		Method[] method = c.getDeclaredMethods();
+		for(Method a:method)
+		{
+			System.out.println((++count)+"------->" +a);
+		}
+		Method[] methods = c.getDeclaredMethods();
+		for(Method a1:methods)
+		{
+			System.out.println(a1.getName()+"===="+(count++));
+		}
+		
+		
+
+
+
+
+		Emp e1 = new Emp(10,"Anjali");
+		System.out.println(e1.toString());
+	}
+}
+class Emp
+{
+	int empId;
+	String empName;
+	Emp(int empId, String empName)
+	{
+		this.empId = empId;
+		this.empName = empName;
+	}
+	public String toString()
+	{
+		return "Employee ID: " + empId + ", Employe Name: " + empName;
+	}
+}
+
+program 38 Shallowclone
+class Shallowclone   // copy the reference of an object
+{
+	public static void main(String[] args)
+	{
+		shallow s = new shallow();
+		s.setEmpid(20);
+		s.setEmpname("Anjali");
+		System.out.println("EmpID1 = "+s.empid+"EmpName1 = "+s.empName);
+		shallow s1 = s;
+		System.out.println("EmpID2 = "+s.empid+"EmpName2 = "+s.empName);
+	}
+		
+		
+}
+class shallow
+{
+	int empid;
+	String empName;
+  	public void setEmpid(int empid)
+	{
+		this.empid=empid;
+		
+	}
+	public void setEmpname(String empName)
+	{
+		this.empid=empid;
+		
+	}
+	public int getEmpid()
+	{
+		return empid;
+		
+	}
+	public String getEmpname()
+	{
+		return empName;
+		
+	}
+	public String toString()
+	{
+		return "Empid =" +empid+ "Empname = "+empName;
+	}
+}
+
+program 39 StringandBuffer
+class StringandBuffer
+{
+	public static void main(String[] args)
+	{
+	
+		String s1 = new String("Anjali"); // it will create new object & stores on heap memory
+		String s2 = "Kavyanjali"; // it will not create any object stores as SCP(static constant pool) used for refference
+		String s3 = s1.concat("N");
+		System.out.println(s1);
+		System.out.println(s2);
+		System.out.println(s3);
+		System.out.println(s1==s2);
+		System.out.println(s1.equals(s2));
+		System.out.println(s1==s2);
+		System.out.println(s1.hashCode()+"___________"+ s2.hashCode() +"_____");
+		
+	
+		StringBuffer s4 = new StringBuffer("Boss");
+		StringBuffer s6 = s4.append("kanth");
+		System.out.println(s4);
+		System.out.println(s6);
+		System.out.println(s4==s6);
+		System.out.println(s4.equals(s6));
+		System.out.println(s4.hashCode()+"___________"+ s6.hashCode() +"____");
+	}
+	
+}
+
+
+/*
+
+
+output
+C:\learnings\Java>java StringandBuffer.java
+Anjali
+Kavyanjali
+AnjaliN
+Bosskanth
+Bosskanth
+
+
+heap
+s1=Anjali
+s3= s1(Anjali+N)
+s4=Boss
+
+
+scp
+Anjali
+s2=Kavyanjali
+s3= s1(Anjali+N)
+Boss=kanth=s6(append) == Bosskanth
+*/
+
+program 40  StringBuffer
+//error in the program
+class StringBuffer
+{
+	public static void main(String[] args)
+	{
+		String s1 = new String("Hello");
+		String s2 = new String("Java");
+		String s3 = new String("Hello");
+		String s4 = s1.concat("Peoples");
+		String s5 = s4.concat("Overides the equals");
+		System.out.println(s1==s2);
+		System.out.println(s2==s3);
+		System.out.println(s1==s3);
+		System.out.println(s3==s4);
+		System.out.println(s1.equals(s2));
+		System.out.println(s2.equals(s3));
+		System.out.println(s1.equals(s5));
+		System.out.println(s1.equals(s4));
+		System.out.println(s1.hashCode()+"---"+s2.hashCode()+"---"+s3.hashCode()+"---"+s4.hashCode()+"---"+s5.hashCode());
+
+
+		StringBuffer br = new StringBuffer("Appending");
+		System.out.println(br);
+
+	}
+}
+program 41
+Exception Handling
+---------------------------
+
+1. while performing any activity/operation mean while any issue occurs the program it disturb the program called - exception
+2. The unexpected event that distrub the flow of execution called - exception.
+What we do for the soulution? 
+3.while performing any operation if any exception occurs how we are handling - Exception handling.
+4.It wil occur at the run time.
+5. java has provided pre-defined class(they have written the classex: String, System.out.println)in order to work with exception.
+
+6. Throwable -Parent class is exception class. Child class.
+1.	Exception
+2.      Error
+7. Exception - child class - in these some child class are there
+
+1. Runtime exception- Some child class are there.
+        1. NullPointerException
+	2. Arthimatic Exception
+	3. ArrayOutofboundException
+	4.ClassCastException
+2.IoException
+3.FilenotFoundException
+4.Servlet Exception
+5.Sql Exception
+
+program 42 Trymanualclose
+
+import java.io.*;
+class Trymanualclose
+{
+	public static void main(String[] args)
+	{
+
+		FileReader fr = null;
+		BufferedReader br = null;
+		try
+		{
+
+			File f = new File("C:\\learnings\\Java\\test.txt");
+			 fr = new FileReader(f);
+			 br = new BufferedReader(fr);
+			System.out.println(br.readLine());
+		
+		}
+		catch(IOException | ArithmeticException | NullPointerException e )
+		{
+			System.out.println("Executing catch block and closing manually");
+			
+		}
+	
+		finally
+		{
+			try		
+			{
+	
+				if(br != null && fr !=null)
+				{
+					fr.close();
+					br.close();
+				}
+			}
+			catch(IOException e)
+			{
+				System.out.println("Clsing the blocks maunally");
+				e.printStackTrace();
+			}
+			System.out.println("Finally block will exceute");
+		}
+	}
+}
+
+program 43 - Trywithresource 
+//try with resource and multi catch 
+// close automatically if use trywith multi resource
+import java.io.*;
+class Trywithresource 
+{
+	public static void main(String[] args)
+	{
+		try(BufferedReader br = new BufferedReader(new FileReader(new File("C:\\learnings\\Java\\test.txt"))))
+		{
+			System.out.println(br.readLine());
+			System.out.println("Trying with resource");
+			System.out.println(100/0);
+			
+		}
+		catch(IOException | ArithmeticException | NullPointerException e )
+		{
+			System.out.println("Executing multi catch");
+			
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

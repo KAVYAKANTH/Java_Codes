@@ -1,0 +1,34 @@
+Interface
+
+1. Inside the interface we can define variables by using static & Final keyword.cannot define the instance variable.
+2. Instance method access inside the Instace method.
+3. Inside interface we canot define constrcutor inside class.
+4. In abstract class we can define the construtor, can define the instancce variable.
+
+5 Purpose of constructor: Intialized the object.intialize the variable.
+6.For Every abstract class there should be child class.
+7.First line of constrcutor should be super.
+8. Java cannot support multiple Inheritance- If class extending another class, it will not extend the object.
+ex: class A extends Object  - -- mutli-level interitance.
+{
+}
+class B extends A, Object
+{
+}
+
+24-11-2023
+0.
+Calling the variable & Intializing
+1. Inside the class having the 3 class with same variable method,using construtor calling the variable(this), creating the object and passing the value.
+3. mutiple inheritance is not supported in class, it will support in inhterfaces,(bec there is no implementation in declaration).
+
+4. How multiple inherutance will supports in java- it will overiden ,when creating an object for child class-it will understand - if there is no implementation, it will call the multiple inheritance
+
+IMP-5. If any interface having single ONE abstract 
+method declaration- it is called as function interface.
+
+IMP- 6. Inside the interface if there are no method declaration - marker interface.
+
+
+
+

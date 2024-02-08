@@ -1,0 +1,11 @@
+java 8
+1.functional Interface
+2.Predefined Functional interface
+	1.
+	2.Functional
+	3.Consumer
+	4.Supplier
+3.Lambda
+4.Static method
+5.Defualt method
+6. Reffered method using static and instance.
